@@ -4,10 +4,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
+import { Category } from '@/app/interfaces/interfaces';
 
 const ParentCategoryPage = () => {
   const { slug } = useParams(); // Get the parent slug from the URL
-  const [subCategories, setSubCategories] = useState([]);
+  const [subCategories, setSubCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

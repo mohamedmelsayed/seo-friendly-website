@@ -12,7 +12,7 @@ const AboutPage = () => {
         url: "https://yourwebsite.com/services"
       })}
       <h1 className="text-3xl font-bold text-primary">About Us</h1>
-      <p className="mt-4">We are a leading company in providing services for kids' games, digital marketing, website design, events management, and tools renting.</p>
+      <p className="mt-4">We are a leading company in providing services for kids games, digital marketing, website design, events management, and tools renting.</p>
     </Layout>
   );
 };

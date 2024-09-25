@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 // app/layout.tsx// app/layout.tsx
-import SEO from '../next-seo.config'; // Adjust the path based on your file structure
-import React, { useContext } from 'react';
+import React from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import './globals.css'; // Import global styles if you have them
-import { DefaultSeo } from "next-seo";
 import Head from "next/head";
-import { BlogsCategoryProvider } from "./context/CategoryContext";
-import { ProductCategoryProvider } from "./context/ProductCategoryContext";
 import CombinedProviders from "./context/CombinedProviders";
 
 // Import Tajwal from next/font/google

@@ -3,10 +3,11 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { Category } from '../interfaces/interfaces';
 
 // Define the shape of the context data
 interface ProductCategoryContextType {
-  productCategories: any[];
+  productCategories: Category[];
   loading: boolean;
   error: string | null; // Add an error state
 }
@@ -25,7 +26,7 @@ export const useProductCategories = () => {
 
 // Create a provider component
 export const ProductCategoryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [productCategories, setProductCategories] = useState<any[]>([]);
+  const [productCategories, setProductCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

@@ -2,13 +2,11 @@
 "use client"; // Add this at the top
 
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { useBlogsCategories } from '../context/CategoryContext';
 import { useProductCategories } from '../context/ProductCategoryContext';
 
 const Header = () => {
-  const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const [showSubMenu, setShowSubMenu] = useState(false);
   const { blogCategories } = useBlogsCategories(); // Access blogCategories from context

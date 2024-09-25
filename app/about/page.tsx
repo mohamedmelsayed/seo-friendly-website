@@ -1,5 +1,4 @@
 // app/pages/about.tsx
-import Head from 'next/head';
 import Layout from '../layout';
 import { useSeo } from '../hooks/useSeo';
 
@@ -13,7 +12,7 @@ const AboutPage = () => {
         url: "https://yourwebsite.com/services"
       })}
       <h1 className="text-4xl font-bold text-primary">Welcome to مجموعة محمد</h1>
-      <p className="mt-4">Your one-stop solution for kids' games tickets, digital marketing, website design, events management, and tools renting.</p>
+      <p className="mt-4">Your one-stop solution for kids games tickets, digital marketing, website design, events management, and tools renting.</p>
     </Layout>
   );
 };
