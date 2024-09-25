@@ -4,6 +4,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Category } from '../interfaces/interfaces';
+import axiosInstance from '../utils/axiosConfig';
 
 // Define the shape of the context data
 interface BlogsCategoryContextType {
@@ -32,7 +33,7 @@ export const BlogsCategoryProvider: React.FC<{ children: React.ReactNode }> = ({
     // Fetch categories once when the provider mounts
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`http://192.168.2.12:8000/api/blog-categories`);
+        const response = await axiosInstance.get(`/api/blog-categories`);
         setBlogCategories(response.data.data); // Assuming API response has data
         setLoading(false);
       } catch (error) {

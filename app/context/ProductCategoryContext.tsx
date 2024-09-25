@@ -4,6 +4,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Category } from '../interfaces/interfaces';
+import axiosInstance from '../utils/axiosConfig';
 
 // Define the shape of the context data
 interface ProductCategoryContextType {
@@ -35,7 +36,7 @@ export const ProductCategoryProvider: React.FC<{ children: React.ReactNode }> = 
     const fetchCategories = async () => {
       try {
         setLoading(true); // Ensure loading state is set correctly
-        const response = await axios.get(`http://192.168.2.12:8000/api/product-categories`);
+        const response = await axiosInstance.get(`/api/product-categories`);
         
         // Assuming API response is structured as { data: [...] }
         if (response.data && response.data.data) {
