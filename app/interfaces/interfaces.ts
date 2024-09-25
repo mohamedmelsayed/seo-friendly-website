@@ -23,6 +23,11 @@ export interface BlogPost {
     description: string;
     image: string;
     slug: string;
+    category:{
+        name:{
+            ar:string;
+        };
+    }
   }
 
   export interface PostGridProps {

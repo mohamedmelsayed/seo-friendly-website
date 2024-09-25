@@ -3,12 +3,10 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { Category } from '../interfaces/interfaces';
-import axiosInstance from '../utils/axiosConfig';
 
 // Define the shape of the context data
 interface BlogsCategoryContextType {
-  blogCategories: Category[];
+  blogCategories: any[];
   loading: boolean;
 }
 
@@ -26,14 +24,14 @@ export const useBlogsCategories = () => {
 
 // Create a provider component
 export const BlogsCategoryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [blogCategories, setBlogCategories] = useState<Category[]>([]);
+  const [blogCategories, setBlogCategories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch categories once when the provider mounts
     const fetchCategories = async () => {
       try {
-        const response = await axiosInstance.get(`/api/blog-categories`);
+        const response = await axios.get(`http://192.168.2.12:8000/api/blog-categories`);
         setBlogCategories(response.data.data); // Assuming API response has data
         setLoading(false);
       } catch (error) {

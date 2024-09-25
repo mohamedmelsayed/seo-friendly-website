@@ -14,6 +14,7 @@ const PostGrid: React.FC<PostGridProps> = ({ posts }) => {
               alt={post.title.ar}
               className="w-full h-48 object-cover rounded-md mb-4"
             />
+
             <h3 className="text-lg font-bold text-primary mb-2">{post.title.ar}</h3>
             <p className="text-gray-600">{post.content.ar}</p>
           </a>
