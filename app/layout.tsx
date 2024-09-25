@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import './globals.css'; // Import global styles if you have them
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
+import { BlogsCategoryProvider } from "./context/CategoryContext";
 
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -29,11 +30,13 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <title>مجموعة محمد - Leading Trade and Investment Company</title>
       </Head>
       <body className="flex flex-col min-h-screen">
+      <BlogsCategoryProvider>
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
           {children}
         </main>
         <Footer />
+        </BlogsCategoryProvider>
       </body>
     </html>
   );
