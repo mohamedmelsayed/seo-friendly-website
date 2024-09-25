@@ -11,6 +11,8 @@ import './globals.css'; // Import global styles if you have them
 import { DefaultSeo } from "next-seo";
 import Head from "next/head";
 import { BlogsCategoryProvider } from "./context/CategoryContext";
+import { ProductCategoryProvider } from "./context/ProductCategoryContext";
+import CombinedProviders from "./context/CombinedProviders";
 
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -30,13 +32,13 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <title>مجموعة محمد - Leading Trade and Investment Company</title>
       </Head>
       <body className="flex flex-col min-h-screen">
-      <BlogsCategoryProvider>
+      <CombinedProviders>
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
           {children}
         </main>
         <Footer />
-        </BlogsCategoryProvider>
+        </CombinedProviders>
       </body>
     </html>
   );

@@ -5,28 +5,16 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useBlogsCategories } from '../context/CategoryContext';
+import { useProductCategories } from '../context/ProductCategoryContext';
 
 const Header = () => {
   const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
-  const [categories, setCategories] = useState([]);
   const [showSubMenu, setShowSubMenu] = useState(false);
-  const { blogCategories, loading } = useBlogsCategories(); // Access blogCategories from context
+  const { blogCategories } = useBlogsCategories(); // Access blogCategories from context
+  const { productCategories } = useProductCategories(); // Access blogCategories from context
   const [showSubMenuBlog, setShowSubMenuBlog] = useState(false);
-  useEffect(() => {
-    // Fetch product categories from the API
-    const fetchCategories = async () => {
-      try {
-        const response = await axios.get('http://192.168.2.12:8000/api/product-categories'); // Replace with your actual API endpoint
-        setCategories(response.data.data);
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-      }
-    };
-
-    
-    fetchCategories();
-  }, []);
+ 
 
   
 
@@ -76,8 +64,8 @@ const Header = () => {
             {showSubMenu && (
               <div className="absolute left-0 mt-2 bg-white text-black p-4 shadow-lg z-10">
                 <ul>
-                  {categories.length > 0 ? (
-                    categories.map((category) => (
+                  {productCategories.length > 0 ? (
+                    productCategories.map((category) => (
                       <li key={category.id} className="hover:bg-gray-100 p-2">
                         <Link href={`/products/categories/${category.slug}`}>
                           {category.name.ar}
