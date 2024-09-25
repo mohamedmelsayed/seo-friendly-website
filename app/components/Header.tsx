@@ -19,7 +19,7 @@ const Header = () => {
   
 
   return (
-    <header className="bg-primary text-white p-4">
+    <header className="bg-primary text-white p-4 tajwal-bold">
       <nav className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold">مجموعة محمد</Link>
         <div className="space-x-4 relative">

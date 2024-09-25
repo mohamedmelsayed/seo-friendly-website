@@ -14,10 +14,18 @@ import { BlogsCategoryProvider } from "./context/CategoryContext";
 import { ProductCategoryProvider } from "./context/ProductCategoryContext";
 import CombinedProviders from "./context/CombinedProviders";
 
+// Import Tajwal from next/font/google
+import { Tajawal } from 'next/font/google';
+
+const tajwal = Tajawal({
+  subsets: ['arabic', 'latin'], // Ensure both Arabic and Latin subsets are included
+  variable: '--font-tajwal',    // Custom CSS variable to reference the font
+  weight: ['300', '400', '500', '700', '900'], // Include different font weights as needed
+});
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" className={tajwal.variable}>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +39,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
         <title>مجموعة محمد - Leading Trade and Investment Company</title>
       </Head>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex  flex-col min-h-screen">
       <CombinedProviders>
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
