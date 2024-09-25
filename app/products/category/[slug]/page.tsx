@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import { Category } from '@/app/interfaces/interfaces';
+import axiosInstance from '@/app/utils/axiosConfig';
 
 const ParentCategoryPage = () => {
   const { slug } = useParams(); // Get the parent slug from the URL
@@ -16,7 +17,7 @@ const ParentCategoryPage = () => {
       // Fetch sub-categories by parent category slug
       const fetchSubCategories = async () => {
         try {
-          const response = await axios.get(`http://192.168.2.12:8000/api/product-categories?filter[parent_slug]=${slug}`); // Adjust this endpoint to match your API
+          const response = await axiosInstance.get(`/api/product-categories?filter[parent_slug]=${slug}`); // Adjust this endpoint to match your API
           setSubCategories(response.data.data); // Assuming API returns an array of sub-categories
           setLoading(false);
         } catch (error) {

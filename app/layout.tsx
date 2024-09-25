@@ -22,15 +22,15 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="مجموعة محمد offers kids games tickets, digital marketing, website design, events management, and tools renting services." />
+        <meta name="description" content="Mufrgy Group offers kids games tickets, digital marketing, website design, events management, and tools renting services." />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="مجموعة محمد - Leading Trade and Investment Company" />
-        <meta property="og:description" content="مجموعة محمد offers a wide range of services including kids games tickets, digital marketing, website design, events management, and tools renting." />
+        <meta property="og:title" content="Mufrgy Group - Leading Trade and Investment Company" />
+        <meta property="og:description" content="Mufrgy Group offers a wide range of services including kids games tickets, digital marketing, website design, events management, and tools renting." />
         <meta property="og:image" content="https://yourwebsite.com/default-image.jpg" />
         <meta property="og:url" content="https://yourwebsite.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
-        <title>مجموعة محمد - Leading Trade and Investment Company</title>
+        <title>Mufrgy Group - Leading Trade and Investment Company</title>
       </Head>
       <body className="flex  flex-col min-h-screen">
       <CombinedProviders>

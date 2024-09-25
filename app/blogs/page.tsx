@@ -1,30 +1,45 @@
 // app/blogs/page.tsx
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useBlogsCategories } from '../context/CategoryContext';
+import SubCategories from '../components/SubCategories';
+import PostGrid from '../components/PostGrid';
+import axios from 'axios';
+import axiosInstance from '../utils/axiosConfig';
 
 const BlogsPage = () => {
   const { blogCategories, loading } = useBlogsCategories();
+  const [posts, setPosts] = useState([]);
+  const [postLoading, setPostLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axiosInstance.get(`/api/blogs`);
+        setPosts(response.data.data); // Assuming the API response contains the data in response.data.data
+        setPostLoading(false);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setPostLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-primary mb-6">Blog Categories</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul className="list-disc pl-5 mt-4">
-          {blogCategories.map((category) => (
-            <li key={category.id} className="mt-2">
-              <a href={`/blogs/category/${category.slug}`} className="text-blue-500 hover:underline">
-                {category.name.ar}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )
+      <SubCategories categories={blogCategories} loading={loading} />
       
-      }
+      <div className="mt-8">
+        <h2 className="text-2xl font-bold text-primary mb-4">Latest Blogs</h2>
+        {postLoading ? (
+          <p>Loading posts...</p>
+        ) : (
+          <PostGrid posts={posts} />
+        )}
+      </div>
     </div>
   );
 };

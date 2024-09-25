@@ -10,3 +10,27 @@ export interface Category {
   }
   
   
+export interface BlogPost {
+    id: number;
+    title: {
+        ar: string; // Assuming the name has an Arabic version, adjust if necessary
+        en: string; // Assuming the name has an Arabic version, adjust if necessary
+      };
+      content: {
+        ar: string; // Assuming the name has an Arabic version, adjust if necessary
+        en: string; // Assuming the name has an Arabic version, adjust if necessary
+      };
+    description: string;
+    image: string;
+    slug: string;
+  }
+
+  export interface PostGridProps {
+    posts: BlogPost[];
+  }
+  
+  export interface SubCategoriesProps {
+    categories: Category[];
+    loading: boolean;
+  }
+  

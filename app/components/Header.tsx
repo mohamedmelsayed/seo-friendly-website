@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className="bg-primary text-white p-4 tajwal-bold">
       <nav className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">مجموعة محمد</Link>
+        <Link href="/" className="text-2xl font-bold">Mufrgy Group</Link>
         <div className="space-x-4 relative">
           <Link href="/about" className="hover:underline">About</Link>
           <Link href="/services" className="hover:underline">Services</Link>

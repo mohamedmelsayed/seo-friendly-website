@@ -1,18 +1,18 @@
 // next-seo.config.js
 const SEO = {
-    title: "مجموعة محمد - Leading Services and Solutions", // Default title
-    description: "مجموعة محمد offers kids games tickets, digital marketing, website design, events management, and tools renting services.", // Default description
+    title: "Mufrgy Group - Leading Services and Solutions", // Default title
+    description: "Mufrgy Group offers kids games tickets, digital marketing, website design, events management, and tools renting services.", // Default description
     openGraph: {
       type: 'website',
       locale: 'en_US', // Adjust if needed
       url: 'https://yourwebsite.com', // Your default URL, replace with your actual domain
-      site_name: 'مجموعة محمد', // Your company/site name
+      site_name: 'Mufrgy Group', // Your company/site name
       images: [
         {
           url: 'https://yourwebsite.com/default-image.jpg', // Replace with your logo or a default image
           width: 1200,
           height: 630,
-          alt: 'مجموعة محمد - Default Image',
+          alt: 'Mufrgy Group - Default Image',
         },
       ],
     },
@@ -28,7 +28,7 @@ const SEO = {
       },
       {
         name: 'author',
-        content: 'مجموعة محمد', // Replace with your author's name
+        content: 'Mufrgy Group', // Replace with your author's name
       },
     ],
     additionalLinkTags: [
