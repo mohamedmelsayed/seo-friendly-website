@@ -13,7 +13,7 @@ const AboutFounder = () => {
         />
         <p className="text-gray-700 max-w-xl text-center md:text-left leading-relaxed">
           Our founder, John Doe, has over 20 years of experience in the industry and has been a visionary leader,
-          driving the company's success. With a passion for excellence and a deep understanding of the market,
+          driving the company  s success. With a passion for excellence and a deep understanding of the market,
           John has built a company that stands for quality and innovation.
         </p>
       </div>

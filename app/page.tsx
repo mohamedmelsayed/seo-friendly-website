@@ -1,6 +1,4 @@
 // app/pages/about.tsx
-import Layout from './layout';
-import { useSeo } from './hooks/useSeo';
 import AboutUs from './components/AboutUs';
 import AboutFounder from './components/AboutFounder';
 import Partners from './components/Partners';

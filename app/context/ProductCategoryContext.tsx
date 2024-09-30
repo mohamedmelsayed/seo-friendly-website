@@ -2,7 +2,6 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import { Category } from '../interfaces/interfaces';
 import axiosInstance from '../utils/axiosConfig';
 

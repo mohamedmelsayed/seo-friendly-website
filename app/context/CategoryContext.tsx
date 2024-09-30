@@ -3,10 +3,11 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { Category } from '../interfaces/interfaces';
 
 // Define the shape of the context data
 interface BlogsCategoryContextType {
-  blogCategories: any[];
+  blogCategories: Category[];
   loading: boolean;
 }
 
@@ -24,7 +25,7 @@ export const useBlogsCategories = () => {
 
 // Create a provider component
 export const BlogsCategoryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [blogCategories, setBlogCategories] = useState<any[]>([]);
+  const [blogCategories, setBlogCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
